@@ -1,0 +1,12 @@
+<swiper class="" indicator-dots="true" indicator-active-color="rgba(70,188,135,1)" indicator-color="rgba(0,0,0,.3)" autoplay interval="2500" duration="1000" circular bindchange="" bindanimationfinish="">
+  <block wx:for="{{swiperImgUrls}}" wx:key="url">
+    <swiper-item>
+      <image class="img" src="{{item.url}}" mode="widthFix"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="playlist-container">
+  <block wx:for="{{playlist}}" wx:key="_id">
+    <x-playlist playlist="{{item}}"></x-playlist>
+  </block>
+</view>

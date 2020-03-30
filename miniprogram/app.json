@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/playlist/playlist",
+    "pages/blog/blog",
+    "pages/profile/profile",
+    "pages/demo/demo",
+    "pages/player/player"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#46bc87",
+    "navigationBarTitleText": "珈克音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#46bc87",
+    "list": [
+      {
+        "pagePath": "pages/playlist/playlist",
+        "text": "歌单",
+        "iconPath": "images/music.png",
+        "selectedIconPath": "images/_music.png"
+      },
+      {
+        "pagePath": "pages/blog/blog",
+        "text": "发现",
+        "iconPath": "images/find.png",
+        "selectedIconPath": "images/_find.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/_mine.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
