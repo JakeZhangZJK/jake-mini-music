@@ -32,9 +32,13 @@ Page({
           name: pl.name,
         }
       })
-      // this._setMusiclist()
+      this._setMusiclist()
       wx.hideLoading()
     })
+  },
+  // 将点击的歌曲列表缓存到本地
+  _setMusiclist() {
+    wx.setStorageSync('musiclist', this.data.musiclist)
   },
 
   /**
