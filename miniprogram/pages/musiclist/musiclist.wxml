@@ -1,9 +1,22 @@
 <view class='detail-container' style='background: url({{listInfo.coverImgUrl}}) no-repeat  top/cover'></view>
 <view class='detail-mask'></view>
+<view class="detail-container-info">
 <view class='detail-info'>
   <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
   <view class='detail'>
     <view class='detail-nm'>{{listInfo.name}}</view>
+    <view class='detail-logo'><i class="iconfont icon-yinle icon-logo"></i> 珈克音乐</view>
+    <view class='detail-description'>{{listInfo.description}}</view>
   </view>
+ 
 </view>
+<view class="share-btn-container">
+  <button class="music-list-share"><i class="iconfont icon-fenxiang icon-share"></i>分享给微信好友</button>
+</view>
+  
+</view>
+
+ 
+<view class="music-list-container">
 <x-musiclist musiclist="{{musiclist}}" />
+</view>

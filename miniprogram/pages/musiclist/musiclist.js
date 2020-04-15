@@ -30,6 +30,7 @@ Page({
         listInfo: {
           coverImgUrl: pl.coverImgUrl,
           name: pl.name,
+          description:pl.description
         }
       })
       this._setMusiclist()

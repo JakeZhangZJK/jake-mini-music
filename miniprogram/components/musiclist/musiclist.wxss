@@ -3,7 +3,7 @@
   display: flex;
   padding: 14rpx 20rpx;
   align-items: center; /* 垂直居中 */
-  background-color: rgba(70,188,135, .1);
+  background-color: rgba(70,188,135, 0);
 }
 
 .musiclist-index {
