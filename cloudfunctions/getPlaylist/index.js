@@ -13,8 +13,8 @@ exports.main = async (event, context) => {
   // const list = await playlistCollection.get()
   // 优化突破云数据库每次只能获取100条数据
   const countResult = await playlistCollection.count() // 返回的是对象
-  const total = countResult.total
-  const batchTimes = Math.ceil(total / MAX_NUM)
+  const total = countResult.total// 总条数
+  const batchTimes = Math.ceil(total / MAX_NUM)// 需要的次数
   const tasks = [] // 任务队列
   for (let i = 0; i < batchTimes; i++) {  
     let promise = playlistCollection.skip(i * MAX_NUM).limit(MAX_NUM).get()

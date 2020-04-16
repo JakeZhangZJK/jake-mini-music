@@ -54,7 +54,7 @@
 					"id": 2,
 					"name": "音乐列表",
 					"pathName": "pages/musiclist/musiclist",
-					"query": "playlistId=\"2365776318\"",
+					"query": "playlistId=2365776318",
 					"scene": null
 				}
 			]
