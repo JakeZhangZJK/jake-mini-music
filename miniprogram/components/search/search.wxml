@@ -1,0 +1,4 @@
+<view class="container">
+  <i class="iconfont icon-search find"></i>
+  <input class="bar" placeholder="{{placeholder}}" placeholder-class="in-bar" bindinput="onInput" bindconfirm="onSearch"></input>
+</view>
