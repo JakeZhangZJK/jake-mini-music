@@ -16,15 +16,6 @@
   padding-left: 60rpx;
 }
 
-.search {
-  width: 60rpx;
-  background: #46bc87;
-  color: #fff;
-  margin-left: 20rpx;
-  font-size: 24rpx;
-  border-radius: 50px;
-}
-
 .in-bar {
   color: #999;
 }

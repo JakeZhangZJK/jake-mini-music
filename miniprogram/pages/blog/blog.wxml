@@ -5,7 +5,7 @@
       <i class="iconfont icon-edit_small"></i>
     </view>
     <view class="search-container">
-      <x-search iconfont="iconfont" icon-sousuo="icon-sousuo" bind:search="onSearch" />
+      <x-search bind:search="onSearch" />
     </view>
   </view>
 
@@ -21,7 +21,7 @@
 
 
   <!-- 底部弹出层 -->
-  <!-- <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
+  <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
 
-  </x-login> -->
+  </x-login>
 </view>

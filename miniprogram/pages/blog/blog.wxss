@@ -28,7 +28,7 @@
 
 .search-container {
   flex: 1;
-  margin-left: 0;
+  margin-right: 10rpx;
 }
 
 .blog-list {

@@ -7,6 +7,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    placeholder: {
+      type: String,
+      value:'请输入关键字'
+    }
 
   },
 
