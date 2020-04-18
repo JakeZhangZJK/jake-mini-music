@@ -1,18 +1,18 @@
-<view class="container">
-	<view class="userInfo-container">
+<view class="container {{isFocus?'container-onFocus':''}}">
+	<view class="userInfo-container  ">
 		<image class="avatarUrl" mode="widthFix" src="{{avatarUrl}}"></image>
 		<view class="name">{{nickName}}</view>
 	</view>
-	<textarea class="content" placeholder="分享新鲜事..." bindinput="onInput" maxlength="140" auto-focus bindfocus="onFocus" bindblur="onBlur"></textarea>
+	<textarea class="content "  placeholder="分享新鲜事..." bindinput="onInput" maxlength="168"  bindfocus="onFocus" bindblur="onBlur"></textarea>
 
 	<view class="image-list">
 		<!-- 显示图片 -->
-		<!-- <block wx:for="{{images}}" wx:key="*this">
+		<block wx:for="{{images}}" wx:key="*this">
       <view class="image-wrap">
         <image class="image" src="{{item}}" mode="aspectFill" bind:tap="onPreviewImage" data-imgsrc="{{item}}"></image>
         <i class="iconfont icon-shanchu" bind:tap="onDelImage" data-index="{{index}}"></i>
       </view>
-    </block> -->
+    </block>
 
 		<!-- 选择图片 -->
 		<view class="image-wrap selectphoto" hidden="{{!selectPhoto}}" bind:tap="onChooseImage">
@@ -23,6 +23,11 @@
 </view>
 
 <view class="footer" style="bottom:{{footerBottom}}px">
-	<text class="words-num">{{wordsNum}}</text>
+<view class="words">
+<text class="words-num">{{wordsNum}}</text>
+<text class="words-max-num">/168</text>
+
+</view>
+	
 	<button class="send-btn" bind:tap="send">发布</button>
 </view>

@@ -65,9 +65,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "编辑博客",
 					"pathName": "pages/blog-edit/blog-edit",
+					"query": "nickName=\"Jake Zhang\"& avatarUrl=\"https://wx.qlogo.cn/mmopen/vi_32/XK1PE8sGQ8GejTlxW…OCN7Bibv8icLSFKubVZZdcP4LHBt3B348lmNX6hWBTcKg/132\"",
 					"scene": null
 				}
 			]

@@ -1,4 +1,7 @@
 // miniprogram/pages/blog/blog.js
+// 搜索的关键字
+let keyword = ''
+
 Page({
 
   /**
@@ -6,6 +9,9 @@ Page({
    */
   data: {
     modalShow:false, // 控制底部弹出层是否显示
+    blogList:[],
+    total:0,
+    showBottomTip:false
   },
 
   // 发布功能
@@ -49,7 +55,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this._loadBlogList()
+  },
+  // 模糊搜索博客
+  onSearch(event) {
+    // console.log(event.detail.keyword)
+    this.setData({
+      blogList: []
+    })
+    keyword = event.detail.keyword
+    this._loadBlogList(0)
+  },
 
+  // 加载博客列表
+  _loadBlogList(start = 0,count = 10) {
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'blog',
+      data: {
+        keyword,
+        start,
+        count,
+        $url: 'list',
+      }
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        blogList: this.data.blogList.concat(res.result),
+        total: start * count
+      })
+      
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
+    })
+  },
+  //跳转至博客详情页
+  goComment(event) {
+    wx.navigateTo({
+      url: '../../pages/blog-comment/blog-comment?blogId=' + event.target.dataset.blogid,
+    })
   },
 
   /**
@@ -84,13 +130,23 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      blogList:[]
+    })
+    this._loadBlogList(0)
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    this._loadBlogList(this.data.blogList.length)
+    if(this.data.total >= this.data.blogList.length){
+      this.setData({
+        showBottomTip:true
+      })
+    }
+
 
   },
 

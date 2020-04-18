@@ -1,4 +1,5 @@
 // components/search/search.js
+let keyword = ' '// 搜索关键字
 Component({
   options: {
     addGlobalClass:true
@@ -25,6 +26,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onInput(event) {
+      keyword = event.detail.value
+    },
 
+    onSearch() {
+      // console.log(keyword)
+      // blog
+      this.triggerEvent('search', {
+        keyword
+      })
+    },
   }
 })
