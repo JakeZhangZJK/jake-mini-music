@@ -6,7 +6,7 @@
     </view>
     <view class="search-container">
     <!-- search为search组件抛过来的事件 -->
-      <x-search bind:search="onSearch" />
+      <x-search bind:search="onSearch"  placeholder="{{placeholder}}"/>
     </view>
   </view>
   <!-- 博客卡片列表 -->
@@ -14,7 +14,7 @@
     <block wx:for="{{blogList}}" wx:key="_id">
       <view class="blog-panel">
         <x-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment" />
-        <!-- <x-blog-ctrl blogId="{{item._id}}" blog="{{item}}" iconfont="iconfont" icon-pinglun="icon-pinglun" icon-fenxiang="icon-fenxiang" /> -->
+        <x-blog-ctrl blogId="{{item._id}}" blog="{{item}}" />
       </view>
     </block>
     <view class="bottom-tip" wx:if="{{showBottomTip}}" >---------人家是有底线的(´｡･v･｡｀)--------- </view>

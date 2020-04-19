@@ -6,7 +6,9 @@
     "pages/demo/demo",
     "pages/player/player",
     "pages/blog-edit/blog-edit",
-    "pages/blog-comment/blog-comment"
+    "pages/blog-comment/blog-comment",
+    "pages/search/search"
+    
 
   ],
   "requiredBackgroundModes": [

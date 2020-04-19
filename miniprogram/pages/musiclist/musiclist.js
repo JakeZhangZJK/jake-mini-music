@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    playlistId:'',// 歌单ID，用于分享
     musiclist: [],
     listInfo: {},
   },
@@ -12,7 +13,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
+    console.log(options,"歌单ID")
+    this.setData({
+      playlistId:options.playlistId
+    }) 
     wx.showLoading({
       title: '加载中',
     })
@@ -87,7 +91,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (event) {
+    console.log('aa',event)
+    return {
+      title: this.data.musiclist,
+      path: `/pages/musiclist/musiclist?playlistId=${this.data.playlistId}`
+    }
   }
 })

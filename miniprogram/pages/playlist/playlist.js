@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    placeholder:'发现好音乐~',
     swiperImgUrls: [
       {
         url: '../../images/1.jpg',
@@ -28,6 +29,11 @@ Page({
     ],
     playlist: []
 
+  },
+  onFocus(){
+    wx.navigateTo({
+      url: '../search/search',
+    })
   },
 
   // 获取歌单列表

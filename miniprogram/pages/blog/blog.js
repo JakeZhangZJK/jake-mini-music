@@ -11,7 +11,8 @@ Page({
     modalShow:false, // 控制底部弹出层是否显示
     blogList:[],
     total:0,
-    showBottomTip:false
+    showBottomTip:false,
+    placeholder:'搜一搜~'
   },
 
   // 发布功能
@@ -56,6 +57,18 @@ Page({
    */
   onLoad: function (options) {
     this._loadBlogList()
+     // 小程序端调用云数据库
+    /*  const db = wx.cloud.database()
+     db.collection('blog').orderBy('createTime', 'desc').get().then((res)=>{
+       console.log(res)
+       const data = res.data
+       for (let i = 0, len = data.length; i<len; i++){
+         data[i].createTime = data[i].createTime.toString()
+       }
+       this.setData({
+         blogList: data
+       })
+     }) */
   },
   // 模糊搜索博客
   onSearch(event) {
@@ -153,7 +166,13 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (event) {
+    console.log(event)
+    let blogObj = event.target.dataset.blog
+    return {
+      title: blogObj.content,
+      path: `/pages/blog-comment/blog-comment?blogId=${blogObj._id}`,
+      // imageUrl: ''
+    }
   }
 })

@@ -1,3 +1,18 @@
+.search-music{
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  margin-top: 15rpx;
+}
+.search-container{
+  flex: 1;
+}
+.blank{
+  width: 5%;
+}
+.swiper{
+margin-top: 15rpx;
+}
 .playlist-container {
   display: flex;
   flex-wrap: wrap;
@@ -5,6 +20,7 @@
   margin-top: 10rpx;
   flex-direction: row;
 }
+
 
 .img {
   width: 100%;

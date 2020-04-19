@@ -29,10 +29,12 @@ Component({
     onInput(event) {
       keyword = event.detail.value
     },
+    onFoucs(){
+      this.triggerEvent('focus')
+    },
 
     onSearch() {
       // console.log(keyword)
-      // blog
       this.triggerEvent('search', {
         keyword
       })

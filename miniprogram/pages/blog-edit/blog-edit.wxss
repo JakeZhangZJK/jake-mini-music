@@ -70,11 +70,11 @@ border-radius: 50%;
 }
 
 .send-btn {
-  width: 100rpx !important;
+  width: 120rpx !important;
   padding: 10rpx 25rpx;
   background: #46bc87;
   color: #fff;
-  font-size: 24rpx;
+  font-size: 28rpx;
   margin-right: 20rpx;
 }
 

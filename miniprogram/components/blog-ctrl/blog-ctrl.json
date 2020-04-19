@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "x-login":"../login/login",
+    "x-bottom-modal":"../bottom-modal/bottom-modal"
+  }
 }

@@ -11,7 +11,7 @@
  
 </view>
 <view class="share-btn-container">
-  <button class="music-list-share"><i class="iconfont icon-fenxiang icon-share"></i>分享给微信好友</button>
+  <button class="music-list-share" open-type="share" data-playlistId="{{playlistId}}"><i class="iconfont icon-fenxiang icon-share"></i>分享给微信好友</button>
 </view>
   
 </view>
