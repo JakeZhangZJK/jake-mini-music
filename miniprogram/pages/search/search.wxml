@@ -1,2 +1,2 @@
-<!--pages/search/search.wxml-->
-<text>暂未实现，程序猿努力开发中。。。</text>
+<x-search></x-search>
+<view style="width:100%; margin:30rpx; text-align:center;">暂未实现，程序猿努力开发中。。。</view>

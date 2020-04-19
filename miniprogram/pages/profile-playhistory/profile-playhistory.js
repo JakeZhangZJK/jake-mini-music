@@ -1,34 +1,35 @@
-// miniprogram/pages/profile/profile.js
+// pages/profile-playhistory/profile-playhistory.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    musiclist: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
-  },
-  onTapQrCode() {
-    wx.showLoading({
-      title: '生成中',
-    })
-    wx.cloud.callFunction({
-      name: 'getQrCode'
-    }).then((res) => {
-      console.log(res)
-      const fileId = res.result
-      wx.previewImage({
-        urls: [fileId],
-        current: fileId
+    const playHistory = wx.getStorageSync(app.globalData.openid)
+    if (playHistory.length == 0) {// 如果用户是新用户，则历史为空
+      wx.showModal({
+        title: '播放历史为空',
+        content: '',
       })
-      wx.hideLoading()
-    })
+    } else {
+      // storage里面存储的musiclist替换成播放历史的歌单
+      wx.setStorage({
+        key: 'musiclist',
+        data: playHistory,
+      })
+      this.setData({
+        musiclist: playHistory
+      })
+    }
   },
 
   /**
