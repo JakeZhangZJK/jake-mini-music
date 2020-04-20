@@ -1,2 +1,5 @@
-<x-search></x-search>
-<view style="width:100%; margin:30rpx; text-align:center;">暂未实现，程序猿努力开发中。。。</view>
+<view class="header-search">
+  <x-search placeholder="{{placeholder}}"></x-search>
+</view>
+
+<view class="container" >暂未实现，程序猿努力开发中。。。</view>

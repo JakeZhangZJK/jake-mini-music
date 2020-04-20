@@ -18,7 +18,7 @@ Page({
     if (playHistory.length == 0) {// 如果用户是新用户，则历史为空
       wx.showModal({
         title: '播放历史为空',
-        content: '',
+        content: '🤪🤪🤪',
       })
     } else {
       // storage里面存储的musiclist替换成播放历史的歌单

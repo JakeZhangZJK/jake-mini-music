@@ -47,18 +47,21 @@ Page({
       .limit(MAX_LIMIT).orderBy('createTime', 'desc').get().then((res) => {
         console.log(res)
         let _bloglist = res.data
-        for (let i = 0, len = _bloglist.length; i < len; i++) {
-          _bloglist[i].createTime = _bloglist[i].createTime.toString()
+        if(_bloglist.length == 0){
+          wx.showModal({
+            title: '播放历史为空',
+            content: '🤪🤪🤪',
+          })
+        }else{
+          for (let i = 0, len = _bloglist.length; i < len; i++) {
+            _bloglist[i].createTime = _bloglist[i].createTime.toString()
+          }
+          this.setData({
+            blogList: this.data.blogList.concat(_bloglist)
+          })
+          wx.hideLoading()
         }
-
-
-        this.setData({
-          blogList: this.data.blogList.concat(_bloglist)
-        })
-
-        wx.hideLoading()
       })
-
   },
 
   goComment(event) {

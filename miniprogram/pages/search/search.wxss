@@ -1,1 +1,15 @@
 /* pages/search/search.wxss */
+.header-search{
+  margin: 15rpx 20rpx;
+}
+.container{
+  position: absolute;
+  top:50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #46bc87;
+  text-align: center;
+  font-size: 32rpx;
+  
+}

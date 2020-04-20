@@ -67,9 +67,11 @@ Page({
        }
        this.setData({
          blogList: data
+         
        })
      }) */
   },
+
   // 模糊搜索博客
   onSearch(event) {
     // console.log(event.detail.keyword)

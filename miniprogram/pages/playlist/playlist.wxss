@@ -1,14 +1,14 @@
 .search-music{
   display: flex;
   justify-content: center;
-  width: 95%;
+  width: 97%;
   margin-top: 15rpx;
 }
 .search-container{
   flex: 1;
 }
 .blank{
-  width: 5%;
+  width: 3%;
 }
 .swiper{
 margin-top: 15rpx;
