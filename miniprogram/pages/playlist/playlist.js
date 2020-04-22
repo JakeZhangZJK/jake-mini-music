@@ -1,5 +1,6 @@
 
 const MAX_LIMIT = 15 // 每次查询歌单的最大长度
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -7,26 +8,7 @@ Page({
    */
   data: {
     placeholder:'发现好音乐~',
-    swiperImgUrls: [
-      {
-        url: '../../images/1.jpg',
-      },
-      {
-        url: '../../images/2.jpg',
-      },
-      {
-        url: '../../images/3.jpg',
-      },
-      {
-        url: '../../images/4.jpg',
-      },
-      {
-        url: '../../images/5.jpg  ',
-      },
-      {
-        url: '../../images/6.jpg  ',
-      }
-    ],
+    swiperImgUrls: [],
     playlist: []
 
   },
@@ -58,11 +40,19 @@ Page({
     wx.stopPullDownRefresh()
     wx.hideLoading()
   },
+  _getSwiper(){
+    db.collection('swiper').get().then((res)=>{
+      this.setData({
+        swiperImgUrls: res.data
+      })
+    })
+  },  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this._getPlaylist()
+    this._getSwiper()
   },
 
   /**
@@ -101,6 +91,7 @@ Page({
       playlist:[]
     })
     this._getPlaylist()
+    this._getSwiper()
   },
 
   /**
