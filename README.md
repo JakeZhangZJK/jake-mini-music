@@ -1,3 +1,8 @@
+
+![](https://user-gold-cdn.xitu.io/2020/4/22/171a291d15451781?w=401&h=708&f=gif&s=4774537)
+![](https://user-gold-cdn.xitu.io/2020/4/22/171a292117ad1554?w=401&h=708&f=gif&s=4960433)
+![](https://user-gold-cdn.xitu.io/2020/4/22/171a2925a0d970dc?w=401&h=708&f=gif&s=4246554)
+
 # 云开发 quickstart
 
 这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：

@@ -91,7 +91,7 @@ Component({
           blogId: this.properties.blogId,
           nickName: userInfo.nickName,
           avatarUrl: userInfo.avatarUrl
-        }
+        } 
       }).then(res => {
         wx.hideLoading()
         wx.showToast({

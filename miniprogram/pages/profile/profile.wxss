@@ -14,6 +14,42 @@ page {
   color: #fff;
   font-weight: 300;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.profile-header:after{
+  content: ' ';
+  width: 1000rpx;
+  height: 1000rpx;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-20%,41%);
+  border-radius: 45%;
+  background-color: rgba(255,255,255, .1);
+  animation: round2 20s linear infinite;
+}
+.profile-header:before{
+  content: ' ';
+  width: 1000rpx;
+  height: 1000rpx;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-80%,41%);
+  border-radius: 45%;
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: round1 20s linear infinite;
+}
+
+@keyframes round1{
+  to{
+    transform: translate(-82%,40%)  rotate(-360deg);
+  }
+}
+@keyframes round2{
+  to{
+    transform: translate(-18%,40%)  rotate(360deg);
+  }
 }
 
 
